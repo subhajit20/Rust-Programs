@@ -1,7 +1,7 @@
 #[derive(Debug)]
-struct AuthCreds{
-    username:String,
-    password:String
+pub struct AuthCreds{
+    pub username:String,
+    pub password:String
 }
 
 impl AuthCreds{
@@ -14,6 +14,9 @@ impl AuthCreds{
         println!("{:?}",new_auth);
     }
 
+    pub fn signup(creds:AuthCreds) -> String{
+        return creds.username;
+    }
 }
 
 pub fn set_creds(username:&String,password:&String){
