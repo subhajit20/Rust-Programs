@@ -1,25 +1,17 @@
-// Making structure
-struct Student{
-    name:String
+pub mod student{
+    pub mod authentication;
+    // pub mod student;
+    // pub mod info;
 }
 
-// main function which will be executed duting runtime
+// use crate::student::student::student::hello;
+// use crate::student::info::my_info::getinfo;
+use crate::student::authentication::set_creds;
+
 fn main() {
-    // let mut name = String::from("Subhajit");
-    // println!("{name}");
-    let mut std1 = Student{
-        name:String::from("Subhajit")
-    };
-    println!("{}",std1.name);
-    append_surname(&mut std1.name);
+    let username = String::from("Subhajit");
+    let password = String::from("SUBHAJII");
+    set_creds(&username,&password);
 }
 
-/*
- * Normal Fuction
- */
-fn append_surname(name:&mut String) -> String {
-    name.push_str(" Ghosh");
-    println!("Hello {name}");
 
-    return name.to_string();
-}
