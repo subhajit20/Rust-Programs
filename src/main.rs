@@ -1,25 +1,14 @@
-pub mod student{
-    pub mod authentication;
-    // pub mod student;
-    // pub mod info;
+pub mod vector{
+    pub mod vector;
+    pub mod traits;
 }
+// use vector::vector::{get_vec,RUST_VEC};
+use vector::traits::Student;
 
-// use crate::student::student::student::hello;
-// use crate::student::info::my_info::getinfo;
-use crate::student::authentication::AuthCreds;
 
-fn main() {
-    let username = String::from("Subhajit");
-    let password = String::from("SUBHAJII");
-    // set_creds(&username,&password);
+fn main(){
+    let std_name = String::from("Subhajit");
+    let std = Student::create_student(&std_name);
 
-    let user = AuthCreds{
-        username:username,
-        password:password
-    };
-
-    let get_user = AuthCreds::signup(user);
-    println!("{}",get_user);
+    println!("{}",std.firstname);
 }
-
-
